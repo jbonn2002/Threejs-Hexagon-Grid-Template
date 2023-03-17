@@ -5,6 +5,9 @@ import { FloatType } from 'three';
 import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
 import * as BufferGeometryUtils from 'three/examples/jsm/utils/BufferGeometryUtils';
 
+//ADD IF YOU WANT NOISE MAP
+// import { createNoise2D } from 'simplex-noise';
+
 const scene = new THREE.Scene();
 scene.background = new THREE.Color("#CCDDD3");
 
@@ -40,6 +43,31 @@ let envmap;
     }
   }
 
+
+//ADD THIS CODE FOR NOISE MAP ON HEXAGON GRID
+
+// let noise2D = createNoise2D();
+
+
+// for ( let i = -15; i < 15; i++ ){
+//   for ( let j = -15; j < 15; j++ ){
+//     let position = tileToPosition( i, j );
+
+
+//     if( position.length() > 16 ) continue;
+
+
+//     let noise = (noise2D( i * 0.1 , j * 0.1 ) + 1) * 0.5;
+//     noise = Math.pow( noise, 1.5 );
+
+
+//     makeHex( noise * MAX_HEIGHT, position);
+
+
+//   }
+// }
+
+// END OF NOISE CODE
 
   makeHex( 3, new THREE.Vector2( 0, 0 ));
   let hexagonMesh = new THREE.Mesh(
